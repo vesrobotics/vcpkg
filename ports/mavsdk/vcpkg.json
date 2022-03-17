@@ -1,0 +1,12 @@
+{
+  "name": "mavsdk",
+  "version-string": "",
+  "homepage": "https://github.com/vesrobotics/MAVSDK/tree/plugin_rc",
+  "description": "https://github.com/vesrobotics/MAVSDK/tree/plugin_rc",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    }
+  ]
+}
