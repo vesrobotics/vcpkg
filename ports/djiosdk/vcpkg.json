@@ -1,0 +1,13 @@
+{
+  "name": "djiosdk",
+  "version-string": "3.9.0",
+  "homepage": "https://github.com/dji-sdk/Onboard-SDK/",
+  "description": "DJI Onboard SDK Official Repository ",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    "libusb"
+  ]
+}

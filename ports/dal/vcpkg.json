@@ -1,0 +1,13 @@
+{
+  "name": "dal",
+  "version-string": "",
+  "homepage": "https://github.com/manuoso/dal",
+  "description": "",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    "djiosdk"
+  ]
+}
