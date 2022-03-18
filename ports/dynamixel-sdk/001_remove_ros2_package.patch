@@ -1,0 +1,26 @@
+diff --git a/dynamixel_sdk/CMakeLists.txt b/dynamixel_sdk/CMakeLists.txt
+index 6830bfe..1bae740 100644
+--- a/dynamixel_sdk/CMakeLists.txt
++++ b/dynamixel_sdk/CMakeLists.txt
+@@ -12,11 +12,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+   add_compile_options(-Wall -Wextra -Wpedantic -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable)
+ endif()
+ 
+-################################################################################
+-# Find ament packages and libraries for ament and system dependencies
+-################################################################################
+-find_package(ament_cmake REQUIRED)
+-
+ ################################################################################
+ # Build
+ ################################################################################
+@@ -67,9 +62,3 @@ install(
+   RUNTIME DESTINATION bin
+ )
+ 
+-################################################################################
+-# Macro for ament package
+-################################################################################
+-ament_export_include_directories(include)
+-ament_export_libraries(${PROJECT_NAME})
+-ament_package()
