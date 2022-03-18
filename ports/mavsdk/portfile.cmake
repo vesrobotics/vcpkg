@@ -72,7 +72,7 @@ vcpkg_cmake_install()
 #    "name": "vcpkg-cmake-config",
 #    "host": true
 #}
-vcpkg_cmake_config_fixup(CONFIG_PATH cmake)
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/MAVSDK)
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 # # Handle copyright
