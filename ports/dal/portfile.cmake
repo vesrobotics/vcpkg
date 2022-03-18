@@ -32,7 +32,7 @@
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/manuoso/dal/archive/refs/heads/VES.zip"
     FILENAME "VES.zip"
-    SHA512 535f1d1367390fb95a81d611c5e022f46bcdd296a43fee88332c54f85292b0264d7ce2806e0479256d2cf2b4aa107e6b80ddce9f126139099ab7761bfe06515a
+    SHA512 c37b8cddc792a94e84901c6175084c57d64c05c6f14a5ef19c8810bbb71e088b827bc39f35357b3ff1359c59352fcfae8d68aea33f9ec93f1f0f4e665fd17109
 )
 
 vcpkg_extract_source_archive_ex(
