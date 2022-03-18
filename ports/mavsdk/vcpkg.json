@@ -1,6 +1,7 @@
 {
   "name": "mavsdk",
-  "version-string": "",
+  "version-string": "0.43.0",
+  "port-version": 1,
   "homepage": "https://github.com/vesrobotics/MAVSDK/tree/plugin_rc",
   "description": "https://github.com/vesrobotics/MAVSDK/tree/plugin_rc",
   "dependencies": [
@@ -11,6 +12,8 @@
     {  
         "name": "vcpkg-cmake-config",
         "host": true
-    }
+    },
+    "tinyxml2",
+    "jsoncpp"
   ]
 }

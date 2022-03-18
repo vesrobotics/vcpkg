@@ -32,7 +32,7 @@
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/vesrobotics/MAVSDK/archive/refs/heads/plugin_rc.zip"
     FILENAME "plugin_rc.zip"
-    SHA512 2564c6e7971d5c3c902a68cc42a22c0a28f8e5f999240f241f5ef91096834263c84e1b42130bc8851ca95fd091faa95cf22a8b6e1ed932e4988bd8a5c26d1cb0
+    SHA512 34355f31f4c403d3562bebef1aede52465abe9a57143b2d6a5b2dcaf806d94bd8a48fb42347c8a177b846859acedcba86863a97f5bf967cf82c6eadbbdd1b1fd
 )
 
 vcpkg_extract_source_archive_ex(
