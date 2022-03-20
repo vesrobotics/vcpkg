@@ -72,7 +72,9 @@ vcpkg_cmake_install()
 #    "name": "vcpkg-cmake-config",
 #    "host": true
 #}
-# vcpkg_cmake_config_fixup(CONFIG_PATH cmake TARGET_PATH share/djiosdk)
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/djiosdk)
+
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 # # Handle copyright
 # file(INSTALL "${SOURCE_PATH}/LICENSE" DESTINATION "${CURRENT_PACKAGES_DIR}/share/djiosdk" RENAME copyright)

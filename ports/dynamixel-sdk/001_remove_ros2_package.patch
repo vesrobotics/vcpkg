@@ -1,5 +1,5 @@
 diff --git a/dynamixel_sdk/CMakeLists.txt b/dynamixel_sdk/CMakeLists.txt
-index 6830bfe..1bae740 100644
+index 6830bfe..99a27a3 100644
 --- a/dynamixel_sdk/CMakeLists.txt
 +++ b/dynamixel_sdk/CMakeLists.txt
 @@ -12,11 +12,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -14,7 +14,13 @@ index 6830bfe..1bae740 100644
  ################################################################################
  # Build
  ################################################################################
-@@ -67,9 +62,3 @@ install(
+@@ -62,14 +57,28 @@ install(
+ 
+ install(
+   TARGETS ${PROJECT_NAME}
++  EXPORT ${PROJECT_NAME}Targets
+   ARCHIVE DESTINATION lib
+   LIBRARY DESTINATION lib
    RUNTIME DESTINATION bin
  )
  
@@ -24,3 +30,34 @@ index 6830bfe..1bae740 100644
 -ament_export_include_directories(include)
 -ament_export_libraries(${PROJECT_NAME})
 -ament_package()
++
++install(EXPORT ${PROJECT_NAME}Targets
++        FILE ${PROJECT_NAME}Targets.cmake
++        NAMESPACE ${PROJECT_NAME}::
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
++)
++
++include(CMakePackageConfigHelpers)
++
++configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake.in
++  "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
++  INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
++)
++
++install(FILES
++          "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
++)
++
+diff --git a/dynamixel_sdk/dynamixel_sdkConfig.cmake.in b/dynamixel_sdk/dynamixel_sdkConfig.cmake.in
+new file mode 100644
+index 0000000..6eb4c64
+--- /dev/null
++++ b/dynamixel_sdk/dynamixel_sdkConfig.cmake.in
+@@ -0,0 +1,6 @@
++get_filename_component(dynamixel_sdk_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
++include(CMakeFindDependencyMacro)
++
++if(NOT TARGET dynamixel_sdk::dynamixel_sdk)
++    include("${dynamixel_sdk_CMAKE_DIR}/dynamixel_sdkTargets.cmake")
++endif()
